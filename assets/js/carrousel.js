@@ -37,7 +37,7 @@ const renderItems = () => {
   })
   .map(recommendation => {
     childElement = createElementHtml(recommendation)
-    childElement.className = "col s4"
+    childElement.className = "col s6 l4"
     appendChildElement = contentDiv.appendChild(childElement)
   })
 };
