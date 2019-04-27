@@ -33,6 +33,7 @@ const createElementHtml = recommendation => {
 const X = (fetchData) => {
   const referenceDiv = document.getElementById("reference");
   const referenceContent = createElementHtml(fetchData.data.reference.item);
+  referenceContent.className = "col"
   referenceDiv.appendChild(referenceContent)
 
   globalData = fetchData;
