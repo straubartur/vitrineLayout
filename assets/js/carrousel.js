@@ -1,4 +1,4 @@
-let maxItens = 4;
+let maxItens = 3;
 let currentIndex = 0;
 const widgetSize = globalData.data.widget.size
 
@@ -37,7 +37,7 @@ const renderItems = () => {
   })
   .map(recommendation => {
     childElement = createElementHtml(recommendation)
-    childElement.className = "col s3"
+    childElement.className = "col s4"
     appendChildElement = contentDiv.appendChild(childElement)
   })
 };

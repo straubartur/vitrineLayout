@@ -2,12 +2,12 @@
   font-size: 14px;
 }
 
-.fromPrice {
-  font-size: 14px;
-}
-
 .itemName {
-  font-size: 13px;
+  font-size: 12px;
+  text-align: justify;
+  text-justify: inter-word;
+  min-height: 80px;
+  margin-bottom: 5px;
 }
 
 .price {
@@ -15,7 +15,14 @@
   font-weight: 600;
   font-size: 18px;
 }
+.vitrine-item-img {
+  width: 100px;
+  height: 120px;
+}
 
+.full-width {
+  width: 100%
+}
 .conditions {
   color: red;
   font-size: 12px;

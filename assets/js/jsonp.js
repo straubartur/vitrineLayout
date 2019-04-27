@@ -1,5 +1,5 @@
 let globalData;
-
+const IMAGE_URL = "https://www.pontofrio-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=870303323";
 const creteField = (tagname, value, classname) => {
   const field = document.createElement(tagname);
   field.innerHTML = value;
@@ -21,6 +21,9 @@ const createElementHtml = recommendation => {
   const containerdiv = document.createElement("div");
   const img = document.createElement("img");
   //img.src = `https:${detailUrl}`;
+  // this link is not working
+  img.src = IMAGE_URL
+  img.className = "vitrine-item-img"
   img.alt = "TABLET_IMG"
 
   containerdiv.appendChild(img);
