@@ -6,17 +6,70 @@
   font-size: 12px;
   text-align: justify;
   text-justify: inter-word;
-  min-height: 80px;
+  min-height: 60px;
   margin-bottom: 5px;
 }
+h3 {
+  font-weight: 400;
+  padding: 8px;
+}
 
+.btn {
+  border: 0;
+  position: relative;
+  top: 75;
+  cursor: pointer;
+}
+
+i {
+  border: solid gray;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.product {
+  cursor: pointer;
+}
+
+.product:hover {
+  background-color: rgba(240,248,255, 0.8);
+}
+
+.showcase {
+  padding: 5px;
+  width: 100%;
+}
+.reference {
+  border-right: 1px solid gray;
+}
 .price {
   color: red;
   font-weight: 600;
   font-size: 18px;
 }
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
 .vitrine-item-img {
-  width: 100px;
+  width: 120px;
   height: 120px;
 }
 

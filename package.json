@@ -1,0 +1,22 @@
+{
+  "name": "muda-o-nome-aqui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/straubartur/vitrineLayout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/straubartur/vitrineLayout/issues"
+  },
+  "homepage": "https://github.com/straubartur/vitrineLayout#readme",
+  "devDependencies": {
+    "parcel": "^1.12.3"
+  }
+}

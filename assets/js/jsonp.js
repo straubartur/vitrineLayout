@@ -1,16 +1,16 @@
-let globalData;
-const IMAGE_URL = "https://www.pontofrio-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=870303323";
-const creteField = (tagname, value, classname) => {
+const createElement = (tagname, value, classname) => {
   const field = document.createElement(tagname);
   field.innerHTML = value;
   field.className = classname;
   return field;
 }
 
-const createElementHtml = recommendation => {
+window.createProduct = recommendation => {
+  console.log(recommendation)
   const {
     detailUrl,
     name,
+    imageName,
     oldPrice,
     price,
     productInfo: {
@@ -19,27 +19,36 @@ const createElementHtml = recommendation => {
   } = recommendation;
 
   const containerdiv = document.createElement("div");
+  const imageDiv = document.createElement("div")
   const img = document.createElement("img");
-  //img.src = `https:${detailUrl}`;
-  // this link is not working
-  img.src = IMAGE_URL
+  img.src = `https:${imageName}`;
   img.className = "vitrine-item-img"
-  img.alt = "TABLET_IMG"
+  img.alt = name;
 
-  containerdiv.appendChild(img);
-  containerdiv.appendChild(creteField("div", name, "itemName"));
-  containerdiv.appendChild(creteField("div", `De: ${oldPrice}`, "fromPrice"));
-  containerdiv.appendChild(creteField("div", `Por: ${price}`, "price"));
-  containerdiv.appendChild(creteField("div", paymentConditions, "conditions"));
+  imageDiv.className = "img-container"
+  imageDiv.appendChild(img);
+  containerdiv.appendChild(imageDiv);
+  containerdiv.appendChild(createElement("p", name, "itemName"));
+  containerdiv.appendChild(createElement("p", `De: ${oldPrice}`, "fromPrice"));
+  containerdiv.appendChild(createElement("p", `Por: ${price}`, "price"));
+  containerdiv.appendChild(createElement("p", paymentConditions, "conditions"));
+  containerdiv.addEventListener("click", () => {
+    window.location = `https:${detailUrl}`;
+  })
   return containerdiv;
 }
 
-const X = (fetchData) => {
+window.X = recommendations => {
   const referenceDiv = document.getElementById("reference");
-  const referenceContent = createElementHtml(fetchData.data.reference.item);
-  referenceContent.className = "col"
+  const referenceContent = createProduct(
+    recommendations
+    && recommendations.data
+    && recommendations.data.reference
+    && recommendations.data.reference.item
+  );
+  referenceContent.className = "product col reference"
   referenceDiv.appendChild(referenceContent)
 
-  globalData = fetchData;
+  main(recommendations)
 
 }

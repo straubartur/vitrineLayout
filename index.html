@@ -8,21 +8,25 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container showcase">
     <div class="row">
       <div class="col s12 l3">
-        <h1>Voce Visitou: </h1>
+        <h3>Voce Visitou: </h3>
         <div id="reference"></div>
       </div>
       <div class="col s12 l9">
-        <h1>e talvez se interesse por: </h1>
+        <h3>e talvez se interesse por: </h3>
         <div class="row full-width">
           <div class="col s1">
-            <button id="prevButton">prev</button>
+            <button id="prevButton" class="btn">
+              <i class="arrow left"></i>
+            </button>
           </div>
           <div class="col s10" id="content"></div>
           <div class="col s1 l1">
-              <button id="nextButton">next</button>
+            <button id="nextButton" class="btn">
+              <i class="arrow right"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -30,9 +34,9 @@
   </div>
 
 
+  <script src="assets/js/carrousel.js"></script>
   <script src="assets/js/jsonp.js"></script>
   <script src="http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X"></script>
-  <script src="assets/js/carrousel.js"></script>
 </body>
 
 </html>
