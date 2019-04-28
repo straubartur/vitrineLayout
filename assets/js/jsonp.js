@@ -1,12 +1,11 @@
 const createElement = (tagname, value, classname) => {
-  const field = document.createElement(tagname);
-  field.innerHTML = value;
-  field.className = classname;
-  return field;
+  const element = document.createElement(tagname);
+  element.innerHTML = value;
+  element.className = classname;
+  return element;
 }
 
 window.createProduct = recommendation => {
-  console.log(recommendation)
   const {
     detailUrl,
     name,
@@ -48,7 +47,5 @@ window.X = recommendations => {
   );
   referenceContent.className = "product col reference"
   referenceDiv.appendChild(referenceContent)
-
   main(recommendations)
-
 }

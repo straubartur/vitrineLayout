@@ -16,14 +16,15 @@ function debounce(func, wait, immediate) {
 };
 
 window.main = (apiResult) => {
-  let maxItens = 3;
+  const maxItens = 3;
+  const mobileMaxItens = 2;
   let currentIndex = 0;
   const widgetSize = apiResult.data.widget.size
+  const prevButton = document.getElementById("prevButton");
+  const nextButton = document.getElementById("nextButton");
 
-  renderItems(apiResult, maxItens, currentIndex);
-
-  document.getElementById("prevButton")
-  && document.getElementById("prevButton")
+  prevButton
+  && prevButton
     .addEventListener("click", () => {
       if(currentIndex === 0) {
         currentIndex = 0;
@@ -33,8 +34,8 @@ window.main = (apiResult) => {
       renderItems(apiResult, maxItens, currentIndex);
     });
 
-  document.getElementById("nextButton")
-  && document.getElementById("nextButton")
+  nextButton
+  && nextButton
     .addEventListener("click", () => {
       if(currentIndex >= widgetSize) {
         currentIndex = widgetSize;
@@ -45,20 +46,23 @@ window.main = (apiResult) => {
     });
 
   addEventListener("resize", debounce(() => {
-    console.log(window.innerWidth)
     if(window.innerWidth < 1001) {
-      renderItems(apiResult, 2, currentIndex);
+      renderItems(apiResult, mobileMaxItens, currentIndex);
     } else {
       renderItems(apiResult, maxItens, currentIndex);
     }
   }, 150))
-};
+
+  renderItems(apiResult, maxItens, currentIndex);
+  };
 
 const renderItems = (apiResult, maxItens, currentIndex) => {
   const contentDiv = document.getElementById("content");
   contentDiv.innerHTML = "";
 
-  apiResult.data.recommendation
+  apiResult
+  && apiResult.data
+  && apiResult.data.recommendation
     .filter((_, index) => {
       return (
         (index <= (currentIndex + maxItens))
