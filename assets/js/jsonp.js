@@ -48,4 +48,6 @@ window.X = recommendations => {
   referenceContent.className = "product col reference"
   referenceDiv.appendChild(referenceContent)
   main(recommendations)
+
+  window.X = () => {}
 }
